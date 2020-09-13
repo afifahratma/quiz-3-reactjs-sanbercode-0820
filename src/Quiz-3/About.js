@@ -1,18 +1,18 @@
 import React,{ Component } from "react"
 import {Link} from 'react-router-dom'
-import './public/css/style.css'
+
 
 class About extends Component{
     render(){
     return (
     <div>
-      <header>
+
         <title>about</title>
-      </header>
+    
       <div className="tentang">
         <fieldset>
         <h1 style={{textAlign: 'center'}}>Data Peserta Sanbercode Bootcamp Reactjs</h1>
-        <ol>
+        <ol style={{ textAlign: 'left'}}>
           <li><strong style={{width: '100px'}}>Nama:</strong> Afifah Ratma Mahardika</li> 
           <li><strong style={{width: '100px'}}>Email:</strong> afifahratma@gmail.com</li> 
           <li><strong style={{width: '100px'}}>Sistem Operasi yang digunakan: </strong> Windows 10</li>
@@ -23,7 +23,7 @@ class About extends Component{
       </div>
      
         <button>
-          <Link to="/" > kembali ke index </Link>
+          <Link className="for-link" to="/" > Back to Home </Link>
           </button>
     </div>
   );

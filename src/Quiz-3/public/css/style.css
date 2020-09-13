@@ -17,7 +17,7 @@ header {
     height: 50px;
     display: flex;
     justify-content: space-between;
-    padding: 5px;
+    padding: 3px;
     position: fixed;
     top: 0px;
     right: 0px;
@@ -31,17 +31,29 @@ nav li {
     margin-left: 10px;
 }
 
+li .for-link{
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 5px 5px;
+    text-decoration: none;
+}
+
+li:hover{
+    background-color:#ebebeb;
+    border-radius: 5px;
+}
 .for-link {
     text-decoration: none;
 }
 
 section {
-    margin-left: 180px;
-    margin-right: 180px;
+    margin-left: 100px;
+    margin-right: 100px;
     background-color: white;
     position: relative;
     top: 70px;
-    padding: 20px;
+    padding: 10px;
     margin-bottom: 100px;
 }
 
@@ -97,7 +109,7 @@ table {
 
   .label-form{
     display: inline-block; 
-    width: 150px; 
+    width: 200px; 
     font-size: 15px;
     margin-bottom: 1em;
   }
@@ -107,7 +119,7 @@ table {
     clear: both;
   } */
 
-  #submit {
+  #submit, #edit {
     width: 100%;
     background-color: #4CAF50;
     color: white;
@@ -118,6 +130,16 @@ table {
     cursor: pointer;
   }
 
+  #delete{
+    width: 100%;
+    background-color:#d94545;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
   .form-film{
     border: 1px transparent; 
     border-radius: 15px; 

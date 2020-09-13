@@ -1,8 +1,38 @@
 .Login {
-    padding: 60px 0;
+  margin-left: 300px;
+  margin-right: 300px;
+  background-color: white;
+  position: relative;
+  top: 70px;
+  padding: 35px;
+  margin-bottom: 300px;
   }
 
   .Login form {
     margin: 0 auto;
     max-width: 320px;
+ 
+  }
+
+ .login-input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+#btn-login {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  #btn-login:hover {
+    opacity: 0.8;
   }

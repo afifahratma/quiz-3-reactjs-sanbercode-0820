@@ -10,16 +10,16 @@ const Login = () => {
     }
     return (
         <div className="Login">
-            <h1>Log In</h1>
+            <h1>Login</h1>
             <form>
-                <label htmlFor='nama'>
-                    <b>Username</b><input type="text" placeholder="Enter Username" required /><br/>
-                </label>
-                <label htmlFor='pass'>
-                    <b>Pass</b><input type="password" placeholder="Enter Password"required/>
-                </label>
+                    <strong>Username :</strong>
+                    <input className="login-input" type="text" placeholder="Enter Username" required /><br/>
+                
+                    <strong>Password: </strong>
+                    <input className="login-input" type="password" placeholder="Enter Password"required/>
+            
             </form>
-            <Link to="/"  onClick={handleClick} value={login}><button>Login</button></Link>
+            <Link to="/"  onClick={handleClick} value={login}><button id="btn-login">Login</button></Link>
             {console.log(login)}
         </div>
     )

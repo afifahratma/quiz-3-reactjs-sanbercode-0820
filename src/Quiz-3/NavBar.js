@@ -3,10 +3,10 @@ import React, {useContext} from 'react'
 import { Link } from 'react-router-dom'
 import './public/css/style.css'
 import logo from './public/img/logo.png'
-/* import { LoginContext } from './LoginContext'
- */
+import { LoginContext } from './LoginContext'
+
 export default function NavBar(){
- // const [logincek] = useContext(LoginContext)
+ const [isLogin] = useContext(LoginContext)
     return(
         <div>
           <link href="public/css/style.css" rel="stylesheet" />
@@ -21,18 +21,14 @@ export default function NavBar(){
                 <li>
                 <Link className="for-link" to="/About"> About </Link> 
                   </li>
+               {isLogin === 'login' && (
                   <li>
-                  <Link className="for-link" to="/Movie"> Movie List Editor </Link> 
-                  </li>
-                  <li>
-                  <Link className="for-link" to="/Login">Login </Link> 
-                  </li>
-                {/* {logincek === 'login' && (<li>
-                        <Link to="/MovieList">Movie List Editor</Link>
-                    </li>)}
-                    {logincek !== 'login' && (<li>
-                        <Link to="/Login">LogIn</Link>
-                    </li>)} */}
+                        <Link className="for-link"  to="/Movie" >Movie List Editor</Link>
+                   </li>
+                  )}
+                    {isLogin !== 'login' && (<li>
+                        <Link className="for-link"  to="/Login">Login</Link>
+                    </li>)} 
               </ul>
             </nav>
           </header>

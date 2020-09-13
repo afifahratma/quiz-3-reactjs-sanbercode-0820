@@ -5,7 +5,7 @@ export const MovieContext = createContext()
 
 export const MovieProvider = props => {
 
-    const [movie, setMovie] = useState(null)
+    const [movie, setMovie] = useState([])
     const [input, setInput] = useState({
             id: null,
             title: "",

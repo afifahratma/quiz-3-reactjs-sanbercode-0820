@@ -7,25 +7,14 @@ import {MovieContext} from './MovieContext'
 const MovieList = () =>{
     const [movie, setMovie, input, setInput] = useContext(MovieContext)
     
+        const [query, setQuery] = useState('')
+
     useEffect(() => {
-        if (movie === null){
+        if (query === '') {
             axios.get(`http://backendexample.sanbercloud.com/api/movies`)
-            .then(res => {
-                setMovie(res.data.map(el => {
-                    return{
-                        id: el.id,
-                        title: el.title,
-                        description: el.description,
-                        year: el.year,
-                        duration: el.duration,
-                        genre: el.genre,
-                        rating: el.rating,
-                        image_url: el.image_url
-                    }
-                }))
-            })
+                .then(res => setMovie(res.data))
         }
-    }, [setMovie, movie])
+    }, [query, setMovie])
 
   /*   useEffect(() =>{
         setFilteredMovie(
@@ -64,22 +53,32 @@ const MovieList = () =>{
         })
     }
 
-   /*  const handleSearch = (event) => {
-        setSearch(event.target.value)
+    const searchMovie = (query) => {
+        let result = movie.filter(item => item.title.toLowerCase().includes(query.toLowerCase()))
+        setMovie(result)
     }
 
-    const resetSearch = () => {
-        setSearch("")
+    const handleQuery = (event) => {
+        setQuery(event.target.value)
+        searchMovie(event.target.value)
     }
 
-    const searchMovie = (event) => {
+    const submitQuery = (event) => {
         event.preventDefault()
-        setSearch(search)
-        resetSearch()
-    } */
+        searchMovie(query)
+    }
     return(
             <div>
-            
+                <form onSubmit={submitQuery} id="search-bar" className="center">
+                <input type="search"
+                    name="q"
+                    id="movie-search"
+                    placeholder="Search Movie..."
+                    onChange={handleQuery}
+                    value={query}
+                />
+                <button type="submit" className="button">Search</button>
+            </form>
             <h1 style={{textAlign: 'center'}}>Daftar Film</h1>
 
                 <table>
@@ -109,8 +108,8 @@ const MovieList = () =>{
                                         <td>{el.genre}</td>
                                         <td>{el.rating}</td>
                                         <td>
-                                            <button value={el.id} onClick={editForm}> Edit </button>
-                                            <button value={el.id} onClick={deleteForm}> Delete </button>
+                                            <button id="edit" value={el.id} onClick={editForm}> Edit </button>
+                                            <button id="delete" value={el.id} onClick={deleteForm}> Delete </button>
                                         </td>
 
                                     </tr>

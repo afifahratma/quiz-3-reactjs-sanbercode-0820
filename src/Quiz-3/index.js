@@ -22,12 +22,14 @@ export default function App() {
                   <NavBar/>
               </div>
                 
+                <section>
               <Switch>
                   <Route exact path="/" component={Home}/>
                   <Route exact path="/About" component={About}/>
                   <Route exact path="/Movie" component={Movie}/>
                   <Route exact path="/Login" component={Login}><Login/></Route>                   
               </Switch>
+              </section>
           </Router>
           </LoginProvider>
       )

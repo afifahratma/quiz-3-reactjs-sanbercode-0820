@@ -35,7 +35,6 @@ class Home extends Component{
     render(){
         return(
             <div>
-            <section>
                 <h1>Daftar Film Terbaik</h1>
 
                 {this.state.movie !== null && 
@@ -57,8 +56,6 @@ class Home extends Component{
                         </div>
                     )
                 })}
-
-            </section>
 
             <footer>
             <h5>copyright © 2020 by Sanbercode</h5>
